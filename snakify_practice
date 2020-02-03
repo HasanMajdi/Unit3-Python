@@ -1,0 +1,168 @@
+Question 1
+A)
+# This program reads two numbers and prints their sum:
+a = int(input())
+b = int(input())
+c = int(input())
+print(a + b + c)
+
+
+
+B)
+#This program read one number and prints it’s square
+a = int(input())
+print(a*a)
+
+C)
+# Read the numbers n for number of students and k number of apples
+n = int(input())
+k = int(input())
+
+# Print three statements
+print(k/ n)
+print(k // n)
+print(k % n)
+
+D) 
+#Read an integer and write the number before and the number next
+a = int(input())
+# Print a value:
+b = "The next number for the number " + str(a) + " is " + str(a + 1)
+c = "The previous number for the number " + str(a) + " is " + str(a - 1)
+print(b)
+print(c)
+ 
+
+
+E)
+#this program will calculate the timestamp between two given time in sec
+#Enter the first hour, minute, second
+h = int(input())
+m = int(input())
+s = int(input())
+#Enter the second hour, minute, second
+a = int(input())
+b = int(input())
+c = int(input())
+
+print((a*3600 + b*60 + c) - (h*3600 + m*60 + s))
+
+
+Question 2 
+
+A)
+# this program will print the last number of a given integer
+# read an integer
+a = int(input())
+#find the remainder
+las = a % 10
+print(las)
+
+B)
+#this program will find the tens digit in a number
+num = int(input())
+#first need to saperate the last three digits from number
+tens = (num%100)
+print(tens // 10)
+
+C)
+#this program will print how many day can car travel given two kilometers
+from math import ceil # need to use math import ceil
+n = int(input()) 
+m = int(input())
+days = m / n 
+x = ceil(days)
+print(x)
+
+D)
+# This program will determine how many hours and minutes after midnight
+n = int(input())
+hrs = n // 60
+mins = n % 60
+print(hrs, mins)
+
+
+
+
+
+
+
+Question 3
+
+A)
+# this program will show the smallest of two given numbers
+num1 = int(input())
+num2 = int(input())
+if (num1 > num2): # checking if num1 is bigger than num2
+    print(num2) # if yes then bring num2 since its smaller
+else:
+    print(num1) # no then print num1 because its the smaller one
+
+B)
+# This program will write 1 if its positive, -1 if its negative and zero if its zero
+num = int(input())
+
+if num > 0:
+    print("1")
+elif num < 0:
+    print("-1")
+else:
+    print("0")
+
+C)
+# this program will check the rook moves
+num1 = int(input())
+n1 = int(input())
+num2 = int(input())
+n2 = int(input())
+if num1 == num2 or n1 == n2:
+    print('YES')
+else:
+    print('NO')
+
+
+D)
+# this program will Determine whether it is possible to split chocolate
+n = int(input())
+m = int(input())
+k = int(input())
+if k < n * m and ((k % n == 0) or (k % m == 0)):
+    print('YES')
+else:
+    print('NO')
+
+
+Question 4
+
+A)
+#This program will print n numbers
+n = int(input())
+sum = 0
+for i in range(n):
+    sum += int(input())
+print(sum)
+
+B)
+#this program will count number of zeros in a integer
+numz = 0
+for i in range(int(input())):
+    if int(input()) == 0:
+        numz += 1
+print(numz)
+
+
+C)
+# This program will find the lost card by checking all the other cards
+n = int(input())
+sumc = 0
+for i in range(1, n + 1):
+	sumc += i
+for i in range(n - 1):
+	sumc -= int(input())
+print(sumc)
+
+
+
+
+
+
