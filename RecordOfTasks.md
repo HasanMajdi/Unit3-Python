@@ -6,4 +6,4 @@
 | __Task no__ | __Planning__ | __Time__ |__Target Completion__ |
 |-------------|------------|------------|----------------------|
 | 1        | Meeting with Client    | 10 mins      | done
-| 2        |  |      |
+| 2        | Creating Success Criteria |   10 mins   | Recorded the interview and created the success
