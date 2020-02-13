@@ -10,6 +10,8 @@ Contents
   Planning 
   ----------
   
+  ## Client Request
+"I would like to start a business company, called Hot Hats, and in my house, I already have a set of Hats. At this instant, I do not identify a way to know the number of hats that I have. The hats present different brands, colors, and styles and popularity. Besides registering these categories, I want the program to provide the current price, release date, loan price and last time used. Additionally, I want the system to be only assessed by me or the people who would work with me"
   ## Success Criteria
   
   1. Finding how many hats the client has.
