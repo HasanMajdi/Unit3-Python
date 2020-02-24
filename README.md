@@ -22,7 +22,7 @@ Kelven who is the owner of HOTHAT Company emailed me to help him keep track on h
   ## Proposed Solution
 To solve HOTHAT Company's problem we need to understand and figure out what kind of inventory a company like them will need. 
 A simple inventory that divides into categories and those categories will have color, price, release date, rented hats, and
-last time that it have been used. To make this possible, we will divide all the hats into the categories that the company requested and some of the categories will have sub class which will make it more easier. For example, Color catergory will have a sub class that shows different colors within that category. 
+last time that it have been used. To make this possible, we will divide all the hats into the categories that the company requested and some of the categories will have sub class which will make it more easier. For example, Color catergory will have a sub class that shows different colors within that category. We will also create a search button that will make everything easier for Kelven and his company. Aother feature that we will add is log in and registration so that only him or his workers could log in or use
   ## Success Criteria
   
   1. Finding how many hats the client has.
