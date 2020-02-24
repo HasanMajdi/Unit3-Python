@@ -24,7 +24,7 @@ To solve HOTHAT Company's problem we need to understand and figure out what kind
 A simple inventory that divides into categories and those categories will have color, price, release date, rented hats, and
 last time that it have been used. To make this possible, we will divide all the hats into the categories that the company requested and some of the categories will have sub class which will make it more easier. For example, Color catergory will have a sub class that shows different colors within that category. We will also create a search button that will make everything easier for Kelven and his company. Aother feature that we will add is log in and registration so that only him or his workers could log in or use
   ## Success Criteria
-  
+  These are all the criteria that our inventory will need to have
   1. Finding how many hats the client has.
   2. Categories for Brand, color, styles, popularity.
   3. providing a price for each hat and renting price.
