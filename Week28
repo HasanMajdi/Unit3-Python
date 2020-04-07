@@ -73,10 +73,37 @@ print("The dog's age in dog's years is: ", dog_year)
 
 ```
 
-Question #6
+Question #6 (Data Analysis)
 
 ```.py
 
+import matplotlib.pyplot as pyplot
+import csv
 
+with open('data.csv') as dt:
+    data = []
+    values = csv.reader(dt, delimiter=",")
+    for row in values:
+        data.append(row)
+print(data)
+
+x1 = data[0]
+y1 = data[1]
+pyplot.plot(x1, y1, label = "World cases")
+
+
+x2 = data[0]
+y2 = data[2]
+pyplot.plot(x2, y2, label = "Somalia cases")
+
+pyplot.xlabel('Number of days')
+pyplot.ylabel('total number of cases confirmed')
+pyplot.show()
 
 ```
+
+Syllabus Questions:
+
+
+
+
