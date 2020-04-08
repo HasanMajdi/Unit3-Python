@@ -113,8 +113,45 @@ devices is the slow hardware, many phones slow down when you opens many apps mak
 to not having enough RAM to process all these apps."
 
 
-Question #2
+Question #2 (Make a table truth)
 
 
-| __Task no__ | __Planning Action__ | __Expected Outcome__ |__Time Estimated__ |__Target Completion__ |__Criteria__ |
-|-------------|---------------------|----------------------|-------------------|----------------------|-------------|
+((a AND b) NOR c) = x
+
+a   b   c   x
+0   0   0   1
+0   0   1   0
+0   1   0   1
+0   1   1   0
+1   0   0   1
+1   0   1   0
+1   1   0   0
+1   1   1   0
+
+
+Question #3 (Define the term protocol)
+
+According to TechTerms "A protocol is a standard set of rules that allow electronic devices to communicate with each other. 
+These rules include what type of data may be transmitted, what commands are used to send and receive data, 
+and how data transfers are confirmed."
+
+Citation: “Protocol.” Protocol Definition, techterms.com/definition/protocol.
+
+
+Question #4
+
+Memory data register(MDR) also known as Memory buffer register(MBR) is a register in the computer processor or
+central processing Unit(CPU) which stores the data tranferred from and into the immediate access storage (eg. RAM). 
+It acts like a buffer and holds anything that is copied from the memory ready for the processor to use it. 
+
+Citation: “MDR(Memory Data Register) Holds the Toppr.com.” Toppr Ask, 
+www.toppr.com/ask/question/mdrmemory-data-register-holds-the/.
+
+
+Question #5 (colour in bits)
+
+if you can store a colour in 7 bits how many different colours can be represented?
+You can show number of colours that can be represented through this method
+(2^x) x stand for number of bits that is stored in the colour.
+(2^7) = 128 
+you can have 128 different colours represented.
