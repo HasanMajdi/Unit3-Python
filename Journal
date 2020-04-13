@@ -35,4 +35,21 @@ No question!
 
 Today we started making the app by using Qt Designer. We have learned the basic elements we need to use 
 Qt Designer and we kicked off on the sketch of the app. 
-afte
+after we had a little meeting on the design of the app with our clients. 
+No Questions.
+
+We started our first coding today which was how to convert the app that we designed into code. We used 
+pyuic5 to convert from ui file into py which then used in pycharm to starting coding for the remaining of 
+the application. We had also learned how to do graphs in pycharm. 
+NO questions.
+
+Today we created a mainpage that runs the app in pycharm. This page will import all classes from created libraries
+and it will connected them so that they could run as one. This is a bit hard for me at the begining but I got used it 
+and now I feel like I'm pretty comfortable with it. I was confused with some of th terms but now I understand. Class was
+fun today and I feel like, people need to talking to their client. NO questions.
+
+Today we explored button behaviour were we connected the login page to the inventory page. button behaviour is a lot easier
+than I anticipated, I thought it will be hard but after understanding the logic behind it, it became easy. Online class was
+helpful because I can go back and fix my mistakes since I have everything in a video. No question. 
+
+
