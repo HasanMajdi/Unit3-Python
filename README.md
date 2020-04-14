@@ -48,7 +48,12 @@ last time that it have been used. To make this possible, we will divide all the 
 
   Design 
   ----------
-  Login code
+ 
+
+  Development 
+  ----------
+  
+   Login code
   ```.py
   
   from PyQt5 import QtCore, QtGui, QtWidgets
@@ -211,9 +216,6 @@ class Ui_SIgn_up(QDialog):
 
   
   ```
-
-  Development 
-  ----------
 
   Evalution 
   ----------
