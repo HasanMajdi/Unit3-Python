@@ -1,4 +1,4 @@
-Question #1
+# Question #1
 
 ```.py
 
@@ -19,7 +19,7 @@ print("Digits", digit)
 
 ```
 
-Question #2
+# Question #2
 
 ```.py
 
@@ -30,7 +30,7 @@ for i in range (1, num+1): # use a for loop to repeat the process from 1 to give
 
 ```
 
-Question #3
+# Question #3
 
 ```.py
 
@@ -40,7 +40,7 @@ print(",".join(sorted(list(set(words))))) # print it by rearranging the words by
 
 ```
 
-Question #4 
+# Question #4 
 
 ```.py
 
@@ -57,7 +57,7 @@ convert.capitalization()
 
 ```
 
-Question #5
+# Question #5
 
 ```.py
 
@@ -73,7 +73,9 @@ print("The dog's age in dog's years is: ", dog_year)
 
 ```
 
-Question #6 (Data Analysis)
+# Question #6 (Data Analysis)
+
+![MartialDec](somaliavsworld.png)
 
 ```.py
 
@@ -105,7 +107,7 @@ pyplot.show()
 Syllabus Questions:
 
 
-Question #1 ( one usability issue associated with the design of mobile devices)
+# Question #1 ( one usability issue associated with the design of mobile devices)
 
 "One usability issue comes with slow hardware. Mobile devices have improved for the best 10 year, now you have mobile devices
 that can compete with computers when it comes to hardware, software, RAM, and Storage. But one downfall to a lot of mobile 
@@ -113,7 +115,7 @@ devices is the slow hardware, many phones slow down when you opens many apps mak
 to not having enough RAM to process all these apps."
 
 
-Question #2 (Make a table truth)
+# Question #2 (Make a table truth)
 
 
 ((a AND b) NOR c) = x
@@ -129,7 +131,7 @@ a   b   c   x
 1   1   1   0
 
 
-Question #3 (Define the term protocol)
+# Question #3 (Define the term protocol)
 
 According to TechTerms "A protocol is a standard set of rules that allow electronic devices to communicate with each other. 
 These rules include what type of data may be transmitted, what commands are used to send and receive data, 
@@ -138,7 +140,7 @@ and how data transfers are confirmed."
 Citation: “Protocol.” Protocol Definition, techterms.com/definition/protocol.
 
 
-Question #4
+# Question #4
 
 Memory data register(MDR) also known as Memory buffer register(MBR) is a register in the computer processor or
 central processing Unit(CPU) which stores the data tranferred from and into the immediate access storage (eg. RAM). 
