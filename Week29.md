@@ -33,11 +33,13 @@ for x in range (1, inp+1):
 
 # Question 3
 
-```.py
-Data for price of gold in USD
+![MartialDec](goldprice.png)
 
+Blue line = cases of Covid-19 confirmed around the world
 
-```
+Orange line = price of gold in USD during March month
+
+The correlation coeffient of these two lines is that gold price in USD increases as the cases of covid-19 increases. In this case, we can say that there is a positive correlation as one increases the other one increases. 
 
 # Question 4
 
