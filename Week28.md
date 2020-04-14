@@ -75,7 +75,11 @@ print("The dog's age in dog's years is: ", dog_year)
 
 # Question #6 (Data Analysis)
 
-![MartialDec](somaliavsworld.png)
+![MartialDec](somliavsworld.png)
+
+Blue line = cases of covid-19 confirmed around the world
+
+Orange = cases of covid-19 confirmed around somalia
 
 ```.py
 
@@ -120,15 +124,16 @@ to not having enough RAM to process all these apps."
 
 ((a AND b) NOR c) = x
 
-a   b   c   x
-0   0   0   1
-0   0   1   0
-0   1   0   1
-0   1   1   0
-1   0   0   1
-1   0   1   0
-1   1   0   0
-1   1   1   0
+|a   |b   |c   |x|
+|----|---|---|---|
+|0   |0   |0   |1|
+|0   |0   |1   |0|
+|0   |1   |0   |1|
+|0   |1   |1   |0|
+|1   |0   |0   |1|
+|1   |0   |1   |0|
+|1   |1   |0   |0|
+|1   |1   |1   |0|
 
 
 # Question #3 (Define the term protocol)
