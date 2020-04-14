@@ -5,5 +5,14 @@
  
 | __Task no__ | __Planning Action__ | __Expected Outcome__ |__Time Estimated__ |__Target Completion__ |__Criteria__ |
 |-------------|---------------------|----------------------|-------------------|----------------------|-------------|
-| 1        | Meeting with Client    |  have a clear idea on what he wants his inventory to have and have a system sketch to create his inventory                    | 10 mins           | I have asked a clear question to my client about what he wants in his inventory and how he will like it to look like                 |       A     |
-| 2        | Creating Success Criteria |   I wanted to have a clear understandig on all the success criteria that I needed to meet in order to finish this program                | 10 mins           | Recorded the interview and created the success| A
+| 1        | Meeting with Client About a request he need   |  have a clear idea on what he wants his inventory to have and have a system sketch to create his inventory                    | 10 mins           | Feb 20th, 2020      |       A     |
+|  2 | Defining the problem | Have a clear defined problem so that its easy to follow everything that need to be solved. its also an easy way to present when giving the client his application | 1 Hour|Feb 25nd, 2020 |A|
+| 3     | Writing Solutions on Clients's request | There need to a clear solution at the end of this plan, and have everything that we need to start this application |1 Hour | Feb 28th, 2020| A |
+| 4       | Creating Success Criteria |   I wanted to have a clear understandig on all the success criteria that I needed to meet in order to finish this program                | 10 mins           |feb 25th 2020| A| 
+| 5        | Designing the application Using Qt Designer   |  Application form need to be done and at the end of this session, the application need to be ready for coding                    | 1 Hour           | March 10th, 2020                 |       C     |
+| 6        | Converting the ui app file into python files  | I need to have python files that I can use for pycharm so that I can make the application work and have all the behaviours that the client requested  | 10 mins  | March 14th, 2020  | C |
+| 7       |Create a mainapplication to unite all libraries for login, sighn, and mainpage| This mainapplicaiton will run the application as one| 1 Hour and 30 mins| April 3rd, 2020|C|
+| 8        |Coding button Behavior| Whenever the buttons like login, signup, or exit clicked, they need to do exactly what they are intended to do. In this case, login need to take you into the inventory page, and signin need to take you to registration page while exit button cancels the application. | 1 Hour | April 6th, 2020| C |
+| 9        |Reading a data File |
+| 10        ||
+| 11        ||
