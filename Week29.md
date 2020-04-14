@@ -39,7 +39,48 @@ Blue line = cases of Covid-19 confirmed around the world
 
 Orange line = price of gold in USD during March month
 
-The correlation coeffient of these two lines is that gold price in USD increases as the cases of covid-19 increases. In this case, we can say that there is a positive correlation as one increases the other one increases. 
+The correlation coeffient of these two lines is that gold price in USD increases as the cases of covid-19 increases. In this case, we can say that there is a positive correlation as one increases the other one increases. The reason why the graph looks constant at the begining is because we are only interested in march so anything before that doesn't count. Also do to the pandemic that is happening around the world, we can figure that the gold price will go up because there aren't much market around the world thus resulting the price of gold to increase. 
+
+
+Use the code below to find the correlation coefficient
+
+CODE: Nikita Tiwari 
+
+link: https://www.geeksforgeeks.org/program-find-correlation-coefficient/
+
+```.py
+
+def correlationCoefficient(X, Y, n):
+    sum_X = 0
+    sum_Y = 0
+    sum_XY = 0
+    squareSum_X = 0
+    squareSum_Y = 0
+
+    i = 0
+    while i < n:
+        # sum of elements of array X.
+        sum_X = sum_X + X[i]
+
+        # sum of elements of array Y.
+        sum_Y = sum_Y + Y[i]
+
+        # sum of X[i] * Y[i].
+        sum_XY = sum_XY + X[i] * Y[i]
+
+        # sum of square of array elements.
+        squareSum_X = squareSum_X + X[i] * X[i]
+        squareSum_Y = squareSum_Y + Y[i] * Y[i]
+
+        i = i + 1
+
+    # use formula for calculating correlation
+    # coefficient.
+    corr = (float)(n * sum_XY - sum_X * sum_Y) / (float)(math.sqrt((n * squareSum_X - sum_X * sum_X) * (n * squareSum_Y - sum_Y * sum_Y)))
+    return corr
+
+
+```
 
 # Question 4
 
