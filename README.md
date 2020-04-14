@@ -48,6 +48,169 @@ last time that it have been used. To make this possible, we will divide all the 
 
   Design 
   ----------
+  Login code
+  ```.py
+  
+  from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QDialog
+
+
+class Ui_Log_in(QDialog):
+    def setupUi(self, Log_in):
+        Log_in.setObjectName("Log_in")
+        Log_in.setWindowModality(QtCore.Qt.WindowModal)
+        Log_in.resize(500, 460)
+        Log_in.setStyleSheet("QDialog {\n"
+"background-color: rgb(163, 29, 25);\n"
+"selection-background-color: rgb(29, 101, 255);\n"
+"border-color: rgb(0, 0, 0);\n"
+"color: rgb(252, 35, 67);\n"
+"}\n"
+"QPushButton {\n"
+"    background-color: rgb(123, 129, 125);\n"
+"}")
+        self.layoutWidget = QtWidgets.QWidget(Log_in)
+        self.layoutWidget.setGeometry(QtCore.QRect(180, 50, 157, 209))
+        self.layoutWidget.setObjectName("layoutWidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.layoutWidget)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.company_name = QtWidgets.QLabel(self.layoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(30)
+        font.setBold(True)
+        font.setWeight(75)
+        self.company_name.setFont(font)
+        self.company_name.setObjectName("company_name")
+        self.verticalLayout.addWidget(self.company_name)
+        self.Username = QtWidgets.QLineEdit(self.layoutWidget)
+        self.Username.setMinimumSize(QtCore.QSize(0, 50))
+        self.Username.setStyleSheet("Username {\n"
+"    selection-background-color: rgb(252, 79, 88);\n"
+"}")
+        self.Username.setObjectName("Username")
+        self.verticalLayout.addWidget(self.Username)
+        self.Password = QtWidgets.QLineEdit(self.layoutWidget)
+        self.Password.setMinimumSize(QtCore.QSize(0, 50))
+        self.Password.setObjectName("Password")
+        self.verticalLayout.addWidget(self.Password)
+        self.LogIn = QtWidgets.QPushButton(self.layoutWidget)
+        self.LogIn.setMinimumSize(QtCore.QSize(0, 25))
+        self.LogIn.setObjectName("LogIn")
+        self.verticalLayout.addWidget(self.LogIn)
+        self.label = QtWidgets.QLabel(Log_in)
+        self.label.setGeometry(QtCore.QRect(120, 140, 41, 20))
+        self.label.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(Log_in)
+        self.label_2.setGeometry(QtCore.QRect(110, 190, 61, 20))
+        self.label_2.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_2.setObjectName("label_2")
+        self.Exit = QtWidgets.QPushButton(Log_in)
+        self.Exit.setGeometry(QtCore.QRect(200, 320, 113, 32))
+        self.Exit.setObjectName("Exit")
+        self.reg_bt = QtWidgets.QPushButton(Log_in)
+        self.reg_bt.setGeometry(QtCore.QRect(200, 270, 113, 32))
+        self.reg_bt.setObjectName("reg_bt")
+
+        self.retranslateUi(Log_in)
+        QtCore.QMetaObject.connectSlotsByName(Log_in)
+
+    def retranslateUi(self, Log_in):
+        _translate = QtCore.QCoreApplication.translate
+        Log_in.setWindowTitle(_translate("Log_in", "Dialog"))
+        self.company_name.setText(_translate("Log_in", "HOTHATS"))
+        self.LogIn.setText(_translate("Log_in", "Login"))
+        self.label.setText(_translate("Log_in", "Email"))
+        self.label_2.setText(_translate("Log_in", "Password"))
+        self.Exit.setText(_translate("Log_in", "Exit"))
+        self.reg_bt.setText(_translate("Log_in", "SignUp"))
+
+  
+  ```
+  
+  signup
+  
+  ```.py
+  
+  from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QDialog
+
+
+class Ui_SIgn_up(QDialog):
+    def setupUi(self, SIgn_up):
+        SIgn_up.setObjectName("SIgn_up")
+        SIgn_up.resize(420, 451)
+        SIgn_up.setStyleSheet("QDialog {\n"
+"background-color: rgb(163, 29, 25);\n"
+"selection-background-color: rgb(29, 101, 255);\n"
+"border-color: rgb(0, 0, 0);\n"
+"color: rgb(252, 35, 67);\n"
+"}\n"
+"QPushButton {\n"
+"    background-color: rgb(123, 129, 125);\n"
+"}")
+        self.layoutWidget = QtWidgets.QWidget(SIgn_up)
+        self.layoutWidget.setGeometry(QtCore.QRect(150, 50, 137, 175))
+        self.layoutWidget.setObjectName("layoutWidget")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.layoutWidget)
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.Labelsignup = QtWidgets.QLabel(self.layoutWidget)
+        self.Labelsignup.setObjectName("Labelsignup")
+        self.verticalLayout_4.addWidget(self.Labelsignup)
+        self.Firstname = QtWidgets.QLineEdit(self.layoutWidget)
+        self.Firstname.setText("")
+        self.Firstname.setObjectName("Firstname")
+        self.verticalLayout_4.addWidget(self.Firstname)
+        self.Email = QtWidgets.QLineEdit(self.layoutWidget)
+        self.Email.setObjectName("Email")
+        self.verticalLayout_4.addWidget(self.Email)
+        self.Password_4 = QtWidgets.QLineEdit(self.layoutWidget)
+        self.Password_4.setObjectName("Password_4")
+        self.verticalLayout_4.addWidget(self.Password_4)
+        self.C_Password = QtWidgets.QLineEdit(self.layoutWidget)
+        self.C_Password.setObjectName("C_Password")
+        self.verticalLayout_4.addWidget(self.C_Password)
+        self.SignUp = QtWidgets.QPushButton(self.layoutWidget)
+        self.SignUp.setObjectName("SignUp")
+        self.verticalLayout_4.addWidget(self.SignUp)
+        self.label = QtWidgets.QLabel(SIgn_up)
+        self.label.setGeometry(QtCore.QRect(29, 80, 101, 20))
+        self.label.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(SIgn_up)
+        self.label_2.setGeometry(QtCore.QRect(59, 110, 71, 20))
+        self.label_2.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_2.setObjectName("label_2")
+        self.label_3 = QtWidgets.QLabel(SIgn_up)
+        self.label_3.setGeometry(QtCore.QRect(59, 150, 71, 20))
+        self.label_3.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_3.setObjectName("label_3")
+        self.label_4 = QtWidgets.QLabel(SIgn_up)
+        self.label_4.setGeometry(QtCore.QRect(49, 180, 91, 20))
+        self.label_4.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_4.setObjectName("label_4")
+        self.Exit_2 = QtWidgets.QPushButton(SIgn_up)
+        self.Exit_2.setGeometry(QtCore.QRect(160, 230, 113, 32))
+        self.Exit_2.setObjectName("Exit_2")
+
+        self.retranslateUi(SIgn_up)
+        QtCore.QMetaObject.connectSlotsByName(SIgn_up)
+
+    def retranslateUi(self, SIgn_up):
+        _translate = QtCore.QCoreApplication.translate
+        SIgn_up.setWindowTitle(_translate("SIgn_up", "Dialog"))
+        self.Labelsignup.setText(_translate("SIgn_up", "          Sign-Up"))
+        self.SignUp.setText(_translate("SIgn_up", "SignUp"))
+        self.label.setText(_translate("SIgn_up", "First/Last name"))
+        self.label_2.setText(_translate("SIgn_up", "Email"))
+        self.label_3.setText(_translate("SIgn_up", "Password"))
+        self.label_4.setText(_translate("SIgn_up", "Co-Password"))
+        self.Exit_2.setText(_translate("SIgn_up", "Exit"))
+
+  
+  ```
 
   Development 
   ----------
