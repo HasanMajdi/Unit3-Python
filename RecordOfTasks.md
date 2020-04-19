@@ -13,6 +13,6 @@
 | 6        | Converting the ui app file into python files  | I need to have python files that I can use for pycharm so that I can make the application work and have all the behaviours that the client requested  | 10 mins  | March 14th, 2020  | C |
 | 7       |Create a mainapplication to unite all libraries for login, sighn, and mainpage| This mainapplicaiton will run the application as one| 1 Hour and 30 mins| April 3rd, 2020|C|
 | 8        |Coding button Behavior| Whenever the buttons like login, signup, or exit clicked, they need to do exactly what they are intended to do. In this case, login need to take you into the inventory page, and signin need to take you to registration page while exit button cancels the application. | 1 Hour | April 6th, 2020| C |
-| 9        |Reading a data File |
-| 10        ||
+| 9        |Reading a data File | withdraw data from another file which can help me store the data in my app | 30 mins | April 12th, 2020 | C |
+| 10        | Designing the system Diagram | This will help me have a clear idea on what the application will look like and it will give the reader a cler over view of the app | 30 min | April 15th, 2020 | B |
 | 11        ||
