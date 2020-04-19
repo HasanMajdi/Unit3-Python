@@ -49,9 +49,12 @@ last time that it have been used. To make this possible, we will divide all the 
   Design 
   ----------
 
-# System Diagram
+### System Diagram
 
 ![MartialDec](sysd.png)
+
+**Fig. 1.** SYSTEM DIAGRAM 
+
  
 
   Development 
