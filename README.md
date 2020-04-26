@@ -70,7 +70,10 @@ last time that it have been used. To make this possible, we will divide all the 
   Development 
   ----------
   
-   ### Main page Library
+  # Library
+   This is the Library section and it contains all main code that will remain for each section of the application. These libraries will contain the main characteristics for each page for example, the main page library contains the delete, save, and exit buttons and also all the color changes in the table. Same thing goes for the other Libraries which contain all their characteristics. 
+  
+  ### Main page Library
 
 ```.py
 
@@ -268,6 +271,10 @@ class Ui_SIgn_up(QDialog):
   
   ```
   
+ 
+  
 
   Evalution 
   ----------
+  
+  
