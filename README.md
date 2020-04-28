@@ -65,7 +65,10 @@ last time that it have been used. To make this possible, we will divide all the 
 
 **Fig. 1.** SYSTEM DIAGRAM 
 
+### The figure below shows an outline of the registration system
+ ![MartialDec](regd.png)
  
+ **Fig. 2.** REGISTRATION DIAGRAM 
 
   Development 
   ----------
