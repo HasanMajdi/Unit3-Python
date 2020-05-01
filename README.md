@@ -65,10 +65,25 @@ last time that it have been used. To make this possible, we will divide all the 
 
 **Fig. 1.** SYSTEM DIAGRAM 
 
+The diagram in figure 1 displays three different pages that are connected and operate as one. The first page you have 
+is the login page and if you are registered then you can access the main page which is where the data is stored. But if 
+you are not registered then you can go to registration page and create your own account. 
+
 ### The figure below shows an outline of the registration system
  ![MartialDec](regDa.png)
  
  **Fig. 2.** REGISTRATION DIAGRAM 
+ 
+ The diagram in figure 2 explains how the registration page work. The diagram explain the process it takes for one person 
+ to create their account and their data being stored in the data base. It also shows the requirement you need while making
+ your account for example, you can't make an email without havnig "@" in your email and so on. It also shows the process of hashing the email and the password for security purposes.
+ 
+ ### The figure below shows an outline of the login system
+ ![MartialDec](logD.png)
+ 
+ **Fig. 3.** LOGIN DIAGRAM 
+
+Figure 3 shows the login diagram and it illustrates what the page does and all its requirements. It also explains the process of unhashing the password and comparing that to the new input email and password. 
 
   Development 
   ----------
@@ -76,7 +91,11 @@ last time that it have been used. To make this possible, we will divide all the 
   # Library
    This is the Library section and it contains all main code that will remain for each section of the application. These libraries will contain the main characteristics for each page for example, the main page library contains the delete, save, and exit buttons and also all the color changes in the table. Same thing goes for the other Libraries which contain all their characteristics. 
   
-  ### Main page Library
+  ### Main page/inventory Library
+
+This library is for the main page and it contains the table that the user is going to edit and all the features that 
+is required to run an editabe page. But its only Library and all the linking will be happening in the coding section 
+below.
 
 ```.py
 
@@ -111,6 +130,10 @@ class Ui_MainWindow(QDialog):
   
   
   ### Login Library
+  
+  Login Library contains all the feature that the login page has such as login and signup buttons, boxes for writing your 
+  email and password. The linking and other functions are being set in the coding section below. 
+  
   ```.py
   
   from PyQt5 import QtCore, QtGui, QtWidgets
@@ -192,6 +215,10 @@ class Ui_Log_in(QDialog):
   ```
   
 ### signup Library
+ 
+ Signup Library contains all the feature that the login page has such as exit and signup buttons, boxes for writing your 
+  name, email and password. The linking and other functions are being set in the signup coding section below. 
+
   
   ```.py
   
@@ -274,8 +301,233 @@ class Ui_SIgn_up(QDialog):
   
   ```
   
+ # Main Application Runner
  
-  
+ This is a page that brings all the libraries together and runs the application as one. This page also allow different pages
+ to be linked together for example, not being able to access the inventory table if you don't login or opening the 
+ registration page after clicking a button on the login page. 
+ 
+ ### Import libraries 
+ 
+ You need to import all these libraries as some of them are the libraries shown above and other 
+ ```.py
+ 
+import sys
+from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QDialog, QMainWindow, QAction, QApplication, QTableWidgetItem
+
+from HOTHATS import Ui_MainWindow as mainW
+from Login import Ui_Log_in as LogQ
+from Signup import Ui_SIgn_up as SignQ
+from mylib import verify_password, hash_password
+import csv
+ 
+ ```
+ 
+ ### Main page/inventory code
+ 
+ ```.py
+ 
+ class MainWindowApp(QMainWindow, mainW):
+    def __init__(self, parent=None):
+        super(MainWindowApp, self).__init__(parent)
+        self.setupUi(self) # build the UI
+        # this will connect the table to method called changeDB
+        self.tableWidget.cellChanged.connect(self.changeDB)
+
+        self.exit_btn.clicked.connect(self.exitapp)
+        self.save_btn.clicked.connect(self.save)
+        self.delete_btn.clicked.connect(self.delete)
+
+        self.data = self.load_data()
+
+        log = logInApp(self)
+        log.show()
+
+
+
+    def exitapp(self):
+            sys.exit(0)
+
+    def changeDB(self): # this method will ulter the characteristics of items stored, it will also change the row and col
+        item = self.tableWidget.currentItem()
+        row = self.tableWidget.currentRow()
+        col = self.tableWidget.currentColumn()
+
+        #self.tableWidget.item(row, col).setBackground(QtGui.QColor(100, 100, 150)) # change the color of col and row when clicked
+        #print(item.text())
+
+        self.save_btn.setDisabled(False)
+        self.delete_btn.setDisabled(False)
+    def save(self):
+        print("uploading to csv")
+
+
+
+    def delete(self): # # this method will reload everything which means it will delete all recent saved items
+        print("Reload the table")
+
+    def load_data(self):
+        with open('data.csv') as data_stored:
+            file = csv.reader(data_stored, delimiter=",")
+            for i, row in enumerate(file):
+                for j, col in enumerate(row):
+                    self.tableWidget.setItem(i, j, QTableWidgetItem(col))
+                    self.tableWidget.item(i, j).setBackground(QtGui.QColor(100, 100, 150))  # change the color of col and row when clicked
+        return []
+class logInApp(LogQ): # login page code
+    def __init__(self, parent=None):
+        super(logInApp, self).__init__(parent)
+        self.setupUi(self)
+
+        # these are the buttons in the login system which are also connected to method for them to work
+        self.Exit.clicked.connect(self.exitapp)
+        self.reg_bt.clicked.connect(self.registration)
+        self.LogIn.clicked.connect(self.try_login)
+
+
+
+    def exitapp(self): # exit button will close the buttone
+        sys.exit(0) # this cancels the code
+
+    def registration(self): # this method will activate the registration button and it will take you to signup page
+        reg = signUpApp(self) # linking to signup page
+        reg.show()
+
+    def try_login(self): # this method is for login button
+        print("trying login") # printing login to see if its login or not
+        #reading both email and password
+        user_email = self.Username.text()
+        user_password = self.Password.text()
+        # opening our output file to retrieve the hashed email and password
+        with open('Output.txt', 'r') as output_file:
+            data = [] # dividing it in rows so that multiple people could have their accounts
+            for row in output_file:
+                data.append(row)
+                # unhashing the email and password so that we can compare it to the new input email and password
+                passW = verify_password(row,user_email + user_password)
+                if passW == True: # if they are the same then continue and close the login page
+                    self.done(0)
+            print("user is not registered") # if not then print that user is not registered
+
+ 
+ ```
+### Login page code 
+
+```.py
+
+class logInApp(LogQ): # login page code
+    def __init__(self, parent=None):
+        super(logInApp, self).__init__(parent)
+        self.setupUi(self)
+
+        # these are the buttons in the login system which are also connected to method for them to work
+        self.Exit.clicked.connect(self.exitapp)
+        self.reg_bt.clicked.connect(self.registration)
+        self.LogIn.clicked.connect(self.try_login)
+
+
+
+    def exitapp(self): # exit button will close the buttone
+        sys.exit(0) # this cancels the code
+
+    def registration(self): # this method will activate the registration button and it will take you to signup page
+        reg = signUpApp(self) # linking to signup page
+        reg.show()
+
+    def try_login(self): # this method is for login button
+        print("trying login") # printing login to see if its login or not
+        #reading both email and password
+        user_email = self.Username.text()
+        user_password = self.Password.text()
+        # opening our output file to retrieve the hashed email and password
+        with open('Output.txt', 'r') as output_file:
+            data = [] # dividing it in rows so that multiple people could have their accounts
+            for row in output_file:
+                data.append(row)
+                # unhashing the email and password so that we can compare it to the new input email and password
+                passW = verify_password(row,user_email + user_password)
+                if passW == True: # if they are the same then continue and close the login page
+                    self.done(0)
+            print("user is not registered") # if not then print that user is not registered
+
+
+```
+
+### Signup Code
+
+```py
+
+class signUpApp(SignQ): # signup page code
+    def __init__(self, parent=None):
+        super(signUpApp, self).__init__(parent)
+        self.setupUi(self)
+
+        # these are the buttons in the signup system which are also connected to method for them to work
+        self.Exit_2.clicked.connect(self.exitapp)
+        self.SignUp.clicked.connect(self.try_signup)
+
+    def exitapp(self): # button for closing the system
+        sys.exit(0)
+
+    def try_signup(self): # this button will restore all the data in a file
+        if self.validate_registration(): # calling for validate registration method
+            self.store() # close the signup page
+
+    def validate_email(self): # a method that check if the email if correct or not
+        email = self.Email.text() # receive the email
+        if '@' not in email: # checking if the input email has "@" or not
+            # if it doesn't have "@" then change the border of the email and return False
+            self.Email.setStyleSheet("border: 2px solid yellow")
+            return False
+        # if it does then change the border color and continue...
+        self.Email.setStyleSheet("border: 2px solid green")
+        return True
+
+    def validate_name(self): # This method check the input name that the user is using to register
+        name = self.Firstname.text() # getting the input
+        if name.isalpha() and len(name) > 5: # checking if the name is alphabet and the length is more than 5
+            # if yes
+            self.Firstname.setStyleSheet("border: 2px solid green")
+            return True
+        self.Firstname.setStyleSheet("border: 2px solid yellow")
+        return False
+
+    def validate_password(self):
+        password = self.Password_4.text()
+        password_c = self.C_Password.text()
+        if password != password_c or len(password) < 5:
+            self.Password_4.setStyleSheet("border: 2px solid yellow")
+            self.C_Password.setStyleSheet("border: 2px solid yellow")
+            return False
+        self.Password_4.setStyleSheet("border: 2px solid green")
+        self.C_Password.setStyleSheet("border: 2px solid green")
+        return True
+
+    def validate_registration(self):
+        email = self.validate_email()
+        name = self.validate_name()
+        password = self.validate_password()
+        return email and name and password
+
+    def store(self):
+        email = self.Email.text()
+        password = self.Password_4.text()
+        print("Hashing", email + password)
+        msg = hash_password(email + password)
+        with open('Output.txt', "a") as output_file:
+            output_file.write('{}\n'.format(msg))
+        self.close()
+
+app = QApplication(sys.argv)
+
+main = MainWindowApp()
+main.show()
+app.exec_()
+
+
+```
+
 
   Evalution 
   ----------
