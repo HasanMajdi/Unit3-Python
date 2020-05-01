@@ -532,4 +532,57 @@ app.exec_()
   Evalution 
   ----------
   
+  # Over View of the Program 
+  
+  This program does most of the functions that it designed to do but with a little more updates this program could 
+  help Kelven run his Company. This program is secured and only those who have the password could use it and edit 
+  anything that is in the table. But one section that is need to work on is the saving data as its not completed yet 
+  and this is where our first update could help this application function properly. Other than storing data, the 
+  application meets all the requirements that the CEO of HOTHAT company requested. 
+  
+  This application is simple to use and the process of making an account and login in is simple as anyone can do it 
+  without needing any instructions. The application doesn't have any crush that could cause the data to be lost and 
+  everything is stored could remain an altered without manually. The application designs follow Kelven's needs to be 
+  simple and the application has his color and some of the button are designed to be colored specifically so that 
+  they don't mistake on each other and this is an example of save and delete button on the main page/window. Overall, 
+  the application is almost complete. 
+  
+  # Improvements
+  
+ 
+This application is close to complete but it requires a lot of improvements that can make the application more simpler 
+and easier to use. first improvement is to not show the main page/window unless you login. The current application, you 
+can't alter the main page/window unless you login but you can still see the main page/window behind the login page so eliminting that overlap is the first improvement. Another simple improvement is adding a verification page in case if 
+the user forget their email or password. This could help the user have multiple accounts and still sustain them without 
+losing any data. 
+
+Another improvement that this application need is to add a search button, Kelven requested that his application need to 
+have a search button and that will be added near the future update after the company adds a lot of data in their 
+inventory. Logout button is also another needed button that will take you back to login page and then you can login 
+into another account. 
+
+Displaying the user's profile on top of the inventory table could be another improvement that could benefit the comapny as 
+they could know which account they are using. Lastly a guide system impletention is another improvement that could make the 
+application easier to use after a lot of features are added. All these improvements wil be coming with the updates that are 
+planned. 
+
+# Future Updates
+
+1. Storing and altering the data in the table. This update is really necessary as the client can't fully use the application
+without this feature. 
+
+2.Guiding system -  this update is for those who still don't understand how the application works
+
+3. Showing one page at a time -  this is one of the first improvement in the system as it only shows one page at a time instead of overlapping all of them. 
+
+4. Verification page - this update will mainly focus on improving the security system that they application has. It will 
+allow the user to change his password if he forgets. 
+
+5. Search Button / logout buttons -  this is another feature that could improve how the user interacts with the application
+as it allow them to change accounts without closing the sytem and get any kind of data that they want to get right away. 
+
+6. Profile information -  this update will help the users have a clear understanding on what kind of account they are using. This could help the users to not confuse accounts that they are using. 
+
+## More Updates are coming based on the Client's need for further improvement.
+  
   
