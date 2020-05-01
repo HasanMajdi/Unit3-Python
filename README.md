@@ -98,6 +98,16 @@ Figure 3 shows the login diagram and it illustrates what the page does and all i
   Development 
   ----------
   
+  ## Importance of the Code Provided below
+  
+  All the codes provided below are important to the application as they are key factors that the application is running. The 
+  main important part of these codes is The Main Application Runner as you need to code for this while the libraries are
+  provided after you convert ui files from Qt designer into python. But just to help the reader understand more, I provided
+  the libraries in case they want to understand how certain part of the application works. Only the Hash library is the
+  important one among all the libraries but you can get that library from Alessandro Molina page and the link is provided in 
+  the reference section. 
+  
+  
   # Library
    This is the Library section and it contains all main code that will remain for each section of the application. These libraries will contain the main characteristics for each page for example, the main page library contains the delete, save, and exit buttons and also all the color changes in the table. Same thing goes for the other Libraries which contain all their characteristics. 
   
@@ -329,6 +339,10 @@ class Ui_SIgn_up(QDialog):
   ```
   
   ### Hash Coding Library
+  
+  This library helps us secure both the email and password that the user provides. it uses different methods such ascii and
+  utf-8 to convert the email and password into hash. It also provides another function that unhash the email and password and
+  it will give you the original email and password. This code was made by Alessandro Molina. 
   
   ```.py
   import hashlib, binascii, os
