@@ -85,6 +85,7 @@ you are not registered then you can go to registration page and create your own 
 
 Figure 3 shows the login diagram and it illustrates what the page does and all its requirements. It also explains the process of unhashing the password and comparing that to the new input email and password. 
 
+
   Development 
   ----------
   
@@ -96,6 +97,11 @@ Figure 3 shows the login diagram and it illustrates what the page does and all i
 This library is for the main page and it contains the table that the user is going to edit and all the features that 
 is required to run an editabe page. But its only Library and all the linking will be happening in the coding section 
 below.
+
+
+![MartialDec](mainpage.png)
+
+**Fig. 4.** Main Page  
 
 ```.py
 
@@ -133,6 +139,12 @@ class Ui_MainWindow(QDialog):
   
   Login Library contains all the feature that the login page has such as login and signup buttons, boxes for writing your 
   email and password. The linking and other functions are being set in the coding section below. 
+  
+
+![MartialDec](loginpage.png)
+
+**Fig. 5.** LogIn Page
+
   
   ```.py
   
@@ -219,6 +231,12 @@ class Ui_Log_in(QDialog):
  Signup Library contains all the feature that the login page has such as exit and signup buttons, boxes for writing your 
   name, email and password. The linking and other functions are being set in the signup coding section below. 
 
+
+
+![MartialDec](signuppage.png)
+
+**Fig. 6.** SignUp Page 
+
   
   ```.py
   
@@ -301,6 +319,27 @@ class Ui_SIgn_up(QDialog):
   
   ```
   
+  ### Hash Coding Library
+  
+  ```.py
+  import hashlib, binascii, os
+
+def hash_password(password):
+    """Hash a password for storing. """
+    salt = hashlib.sha256(os.urandom(60)).hexdigest().encode('ascii')
+    pwdhash = hashlib.pbkdf2_hmac('sha512', password.encode('utf-8'), salt, 100000)
+    pwdhash = binascii.hexlify(pwdhash)
+    return (salt + pwdhash).decode('ascii')
+def verify_password(stored_password, provided_password):
+    """Verify a stored password against one provided by user"""
+    salt = stored_password[:64]
+    stored_password = stored_password[64: -1]
+    pwdash = hashlib.pbkdf2_hmac('sha512', provided_password.encode('utf-8'), salt.encode('ascii'), 100000)
+    pwdash = binascii.hexlify(pwdash).decode('ascii')
+    return pwdash == stored_password
+    
+   ```
+  
  # Main Application Runner
  
  This is a page that brings all the libraries together and runs the application as one. This page also allow different pages
@@ -309,7 +348,8 @@ class Ui_SIgn_up(QDialog):
  
  ### Import libraries 
  
- You need to import all these libraries as some of them are the libraries shown above and other 
+ You need to import all these libraries as some of them are the libraries shown above and other are used to help the 
+ code running. They are very important as they serve the overall function of the program. 
  ```.py
  
 import sys
@@ -325,6 +365,10 @@ import csv
  ```
  
  ### Main page/inventory code
+
+The code below links creates a link between the login page and the main page/window. It also restricts the access of this 
+page without first going through the login page. It also creates behaviours for the button such as exit, save, and delete button, these button will now do their function. It allows the user to edit the table with a set background colors to those 
+rows and columns that contain data. 
  
  ```.py
  
@@ -414,6 +458,13 @@ class logInApp(LogQ): # login page code
  ```
 ### Login page code 
 
+
+
+
+![MartialDec](mainlogin.png)
+
+**Fig. 7.** Login Page to open Main page/Window
+
 ```.py
 
 class logInApp(LogQ): # login page code
@@ -455,6 +506,12 @@ class logInApp(LogQ): # login page code
 ```
 
 ### Signup Code
+
+
+
+![MartialDec](all.png)
+
+**Fig. 8.** Signup page open after Login page
 
 ```py
 
@@ -532,6 +589,18 @@ app.exec_()
   Evalution 
   ----------
   
+  ### The Table below shows the test Plan for this application
+ ![MartialDec](testplan.png)
+ 
+ **Fig. 9.** TEST PLAN
+ 
+ The table shown above shows the test  that is used to see if this application meets the requirement that the client asked 
+ for. The table has 5 columns but only four of them are important in this table, the second column shows test subject, the
+ third column shows where the test subject is found or located, the forth column shows is the function works or if its
+ editable by the user and lastly the fifth column show if it meets the requirements and its based on the outcome of the forth
+ column. 
+ 
+  
   # Over View of the Program 
   
   This program does most of the functions that it designed to do but with a little more updates this program could 
@@ -583,6 +652,12 @@ as it allow them to change accounts without closing the sytem and get any kind o
 
 6. Profile information -  this update will help the users have a clear understanding on what kind of account they are using. This could help the users to not confuse accounts that they are using. 
 
+
+
 ## More Updates are coming based on the Client's need for further improvement.
   
   
+Reference 
+----------
+
+[1] Molina, Alessandro. “Hashing Passwords in Python.” Useful Code, 20 Sept. 2018, www.vitoshacademy.com/hashing-passwords-in-python/.
