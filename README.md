@@ -43,6 +43,15 @@ last time that it have been used. To make this possible, we will divide all the 
 | 10        | Designing the system Diagram | This will help me have a clear idea on what the application will look like and it will give the reader a cler over view of the app | 30 min | April 15th, 2020 | B |
 | 11        | Coding for the login page | This will help the application to function properly and allow the user to login and log out of the system as he pleases  | 30 mins | April 23rd, 2020 | C |
 | 12        | Creating the delete and save buttons for the main page | These two buttons will help the user alter data which is saved in their table | 20 mins | April 23rd, 2020 | C |
+| 13        | Designing registration Diagram | This diagram helps and explains how the registration code works, it also helps anyone who doesn't understand the code and how it works | 40 mins | April 25th, 2020 | B | 
+| 14       | Designing login Diagram |  This will anyone who is reading the login code and gets confuse or anyone else who is looking to make another one like this | 30 mins | April 25th, 2020 | B | 
+| 15       | Creating the test plan | This will help the me see and check if I met all the requirements that the client requested | 15 | April 25th, 2020 | D |
+| 16       | Writing the improvement that the Application need| This is a way of setting up update since the application will have to have these improvements for it to be easy and simple | 20 mins | April 27th, 2020 | D |
+| 17       | Future Update| This is to show what is coming to the application near future and also a way of planning the upcoming updates | 20 mins | April 27th, 2020 | D |
+| 18       | Inserting all the codes into github| This is for saving and presenting the project| 30 mins | April 28th, 2020 | C |
+| 19       | Inserting all the diagram and Images into github | This is for visualization and to help people see what is the outcome of the this coding |  10 mins | April 28th, 2020 | B | 
+| 20       | Writing about tools and finalizing everything | This completes the project until further updates | 2 hours | April 30th, 2020 | D |  
+| 21       | Recording a video to showcase the application functionality | This helps the client to see how the application works | 1 hours | April 30th, 2020 | D | 
 
 
   ## Success Criteria
@@ -548,37 +557,39 @@ class signUpApp(SignQ): # signup page code
     def validate_name(self): # This method check the input name that the user is using to register
         name = self.Firstname.text() # getting the input
         if name.isalpha() and len(name) > 5: # checking if the name is alphabet and the length is more than 5
-            # if yes
+            # if yes then return true and continue 
             self.Firstname.setStyleSheet("border: 2px solid green")
             return True
         self.Firstname.setStyleSheet("border: 2px solid yellow")
-        return False
+        return False # if not true then return false and ask again 
 
-    def validate_password(self):
-        password = self.Password_4.text()
-        password_c = self.C_Password.text()
-        if password != password_c or len(password) < 5:
+    def validate_password(self): # this method is used to check the password and its requirement
+        password = self.Password_4.text() # getting password input
+        password_c = self.C_Password.text() # getting second password
+        if password != password_c or len(password) < 5: # need to compare the two input passwords and check the password to be bigger than 5
+            # if they are not the same or less than 5 input then return false and ask again
             self.Password_4.setStyleSheet("border: 2px solid yellow")
             self.C_Password.setStyleSheet("border: 2px solid yellow")
             return False
+        # if they match and more than 5 then return true and continue 
         self.Password_4.setStyleSheet("border: 2px solid green")
         self.C_Password.setStyleSheet("border: 2px solid green")
         return True
 
-    def validate_registration(self):
+    def validate_registration(self): # this method checks the email, password, and name
         email = self.validate_email()
         name = self.validate_name()
         password = self.validate_password()
         return email and name and password
 
-    def store(self):
+    def store(self): # # this method is for storing the input data
         email = self.Email.text()
         password = self.Password_4.text()
         print("Hashing", email + password)
-        msg = hash_password(email + password)
-        with open('Output.txt', "a") as output_file:
+        msg = hash_password(email + password) # this hashs the email and password
+        with open('Output.txt', "a") as output_file: # store the hashed email and password in output.txt file
             output_file.write('{}\n'.format(msg))
-        self.close()
+        self.close() # close the page after this
 
 app = QApplication(sys.argv)
 
@@ -588,6 +599,15 @@ app.exec_()
 
 
 ```
+
+ # Tools Used In this Program
+ 1. Python - This language is used to code 
+ 2. Pycharm - The application that convert our code into the application
+ 3. Class - used to reduce all the coding
+ 4. Hash - Used to encode the email and password
+ 5. GitHub - This place is where we kept all our documentations.
+ 6. Qt Designer - This application is used to make the layout of the app
+ 7. drive - uploading videos
 
 
   Evalution 
@@ -659,7 +679,7 @@ as it allow them to change accounts without closing the sytem and get any kind o
 
 
 **More Updates are coming based on the Client's need for further improvement.**
-  
+ 
   
 Reference 
 ----------
