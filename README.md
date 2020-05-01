@@ -458,7 +458,9 @@ class logInApp(LogQ): # login page code
  ```
 ### Login page code 
 
-
+This code connects the login page to both registration page and main page/window. It will contain all the requirement 
+needed for a person to login into the sytem. This includes unhashing the stored email and password and comparing it 
+to new input. It gives the buttons in login page a behaviours so that they could do a function in the page. 
 
 
 ![MartialDec](mainlogin.png)
@@ -507,7 +509,9 @@ class logInApp(LogQ): # login page code
 
 ### Signup Code
 
-
+This code main have verification for the data that need to be stored for the new users. It also hash the email and password
+that the user puts so that its hard for people to hack it. The buttons for the registration page are also given a behaviours
+or functions in this code so that the exit button closes the system while signup button saves all the data. 
 
 ![MartialDec](all.png)
 
@@ -654,7 +658,7 @@ as it allow them to change accounts without closing the sytem and get any kind o
 
 
 
-## More Updates are coming based on the Client's need for further improvement.
+**More Updates are coming based on the Client's need for further improvement.**
   
   
 Reference 
